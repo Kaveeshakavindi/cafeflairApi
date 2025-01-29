@@ -2,10 +2,10 @@ import Fluent
 import Vapor
 
 final class Coffee: Model, Content {
-    static let schema = "coffees" // Matches your table name in Postgres
+    static let schema = "coffees"
 
-    @ID(key: .id)
-    var id: UUID?
+    @ID(custom: .id)
+    var id: Int?
 
     @Field(key: "name")
     var name: String
@@ -17,14 +17,15 @@ final class Coffee: Model, Content {
     var imageUrl: String
 
     @Field(key: "price")
-    var price: Double
+    var price: Decimal
 
     @Field(key: "quantity")
     var quantity: Int
 
-    init() {}
+    init() {} //create a new , empty coffee. this creates a new instance of the model
 
-    init(id: UUID? = nil, name: String, description: String, imageUrl: String, price: Double, quantity: Int) {
+    //create a new coffee with all properties set
+    init(id: Int? = nil, name: String, description: String, imageUrl: String, price: Decimal, quantity: Int) {
         self.id = id
         self.name = name
         self.description = description
