@@ -3,6 +3,7 @@ import Vapor
 
 final class Coffee: Model, Content {
     static let schema = "coffees"
+    public static let space: String? = "sc_coffees"
 
     @ID(custom: .id)
     var id: Int?

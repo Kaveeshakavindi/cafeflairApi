@@ -19,7 +19,8 @@ public func configure(_ app: Application) async throws {
 //        decodingContext: .default,
 //        sqlLogLevel: .info
 //    ), as: .psql)
-    //app.migrations.add(CreateCoffee())
-    //try await app.autoMigrate()
+    
+//    app.migrations.add(CreateUser())
+//    try await app.autoMigrate()
     try routes(app)
 }
